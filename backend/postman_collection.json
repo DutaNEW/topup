@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "Topup API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Sync Products",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/sync/products", "host": ["{{baseUrl}}"], "path": ["sync","products"] }
+      }
+    },
+    {
+      "name": "Create Transaction",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": { "mode": "raw", "raw": "{\n  \"amount\": 10000,\n  \"gateway\": \"qris\",\n  \"reference\": \"ref-123\"\n}" },
+        "url": { "raw": "{{baseUrl}}/api/transaction/create", "host": ["{{baseUrl}}"], "path": ["api","transaction","create"] }
+      }
+    },
+    {
+      "name": "List Transactions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/transaction", "host": ["{{baseUrl}}"], "path": ["api","transaction"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000" }
+  ]
+}
